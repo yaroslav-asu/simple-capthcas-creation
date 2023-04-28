@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static CustomTextRenderer prepareCustomTextRenderer() {
@@ -55,8 +56,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String savingPath = "1/";
-        for (int i = 0; i < 10; i++) {
+        String savingPath = "captchas/";
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter count of captchas: ");
+        int captchasCount = sc.nextInt();
+        for (int i = 0; i < captchasCount; i++) {
             saveCaptcha(createCaptcha(), savingPath);
         }
     }
